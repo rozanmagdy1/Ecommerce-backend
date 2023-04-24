@@ -79,60 +79,13 @@ adminApp.put('/categories/status/:id', CC.changeCategoryStatus);
 
 
 /*** cart ***/
-//import filterTypeControllers
 const {CartControllers} = require("../controllers/cartControllers");
 let cartController = new CartControllers();
 
-//list carts
 adminApp.get('/carts',cartController.listCarts);
-
-//get cart of specific user by id
 adminApp.get('/carts/user/:id', cartController.listCartByUserId);
-
-//get cart for user login now
 adminApp.get('/user/cart', cartController.listCartOfUserLoginNow);
-
-//create cart
 adminApp.post('/carts', cartController.addToCart);
-
-//delete cart of specific user
-adminApp.delete('/carts/user/:id', cartController.deleteCartByUserId);
-
-//delete all carts
-adminApp.delete('/carts', cartController.deleteAllCarts);
-
-//delete all items from cart of specific user (empty cart)
-adminApp.delete('/cartItems/user/:id', cartController.deleteCartItemsForUser);
-
-//delete all items from cart of user login now
-adminApp.delete('/user/cartItems', cartController.deleteCartItemsForUserLoginNow);
-
-//delete all items from cart of all user
-adminApp.delete('/cartItems', cartController.deleteAllCartItemsForAllUsers);
-
-//delete item from cart for specific user
-adminApp.delete('/cartItem/user/:id', cartController.deleteItemInCartOfSpecificUser);
-
-//delete item from cart for user login now
-adminApp.delete('/user/cartItem', cartController.deleteItemInCartOfUserLoginNow);
-
-//delete item from all carts of all users
-//adminApp.delete('/cartItem', cartController.deleteItemInCartsOfAllUsers);
-
-//update item in cart of specific user
-adminApp.put('/cartItem/user/:id', cartController.updateItemInCartForSpecificUser);
-
-//update item in cart of user login now
-adminApp.put('/user/cartItem', cartController.updateItemInCartForUserLoginNow);
-
-//update item in all carts for all users
-//adminApp.put('/cartItem', cartController.updateItemInCartForAllUsers);
-
-//update other data of carts for user
-adminApp.put('/carts/user/:id', cartController.updateCartDataOfUser);
-
-//activate or deactivate cart
-adminApp.put('/carts/status/:id', cartController.changeCartStatusByUserId);
 
 module.exports = {
     adminApp

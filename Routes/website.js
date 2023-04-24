@@ -54,20 +54,8 @@ websiteApp.get('/categories/generalCategory/:gId', CC.listCategoryByGeneralCateg
 const {CartControllers} = require("../controllers/cartControllers");
 let cartController = new CartControllers();
 
-//get cart for user login now (open cart page)
 websiteApp.get('/user/cart', cartController.listCartOfUserLoginNow);
-
-//create cart (add to cart)
 websiteApp.post('/carts', cartController.addToCart);
-
-//delete all items from cart of user login now (clear cart)
-websiteApp.delete('/user/cartItems', cartController.deleteCartItemsForUserLoginNow);
-
-//delete item from cart for user login now (remove item)
-websiteApp.delete('/user/cartItem', cartController.deleteItemInCartOfUserLoginNow);
-
-//update item in cart of user login now
-websiteApp.put('/user/cartItem', cartController.updateItemInCartForUserLoginNow);
 
 
 module.exports = {
