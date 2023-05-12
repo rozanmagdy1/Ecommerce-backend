@@ -112,10 +112,11 @@ class UserService {
         return decoded.username;
     }
 
+    key = process.env.SENDGRID_SECRET_KEY;
     transporter = nodemailer.createTransport(sendGridTransport({
         service: 'gmail',
         auth: {
-            api_key: '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'
+            api_key: this.key
         }
     }));
 

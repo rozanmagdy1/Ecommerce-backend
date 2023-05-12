@@ -1,8 +1,8 @@
 const mongo = require('mongodb');
 const {ObjectId} = require("mongodb");
 const MongoClient = mongo.MongoClient;
-let url = "mongodb://localhost:27017";
-// let url = "mongodb+srv://rozan1:1234567890@cluster0.hwk4gkn.mongodb.net/test";
+// let url = "mongodb://localhost:27017";
+let url = process.env.MONGO_URI
 
 //connect to mongo data base
 function MongoConnect(url) {
