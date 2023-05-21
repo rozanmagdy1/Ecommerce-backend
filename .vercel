@@ -3,6 +3,6 @@
   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
   "env": {
-    "MONGO_URI": "mongodb+srv://rozan:cluster0.rozan@cluster0.dqpcacg.mongodb.net/?retryWrites=true&w=majority"
+    "MONGO_URI": "mongodb+srv://rozan_1:Rozan123456789@cluster1.lsru8o9.mongodb.net/"
   }
 }
