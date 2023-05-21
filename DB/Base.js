@@ -6,7 +6,7 @@ let url = process.env.MONGO_URI
 //connect to mongo data base
 function MongoConnect(url) {
     return new Promise(function (resolve, reject){
-        MongoClient.connect(url, function(err, db) {
+        MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },function(err, db) {
             if (err) {reject(err)}
             resolve(db);
         });
