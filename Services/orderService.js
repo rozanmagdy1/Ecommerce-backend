@@ -1,7 +1,7 @@
 const {findAll, findOne, insertOne, updateOne, deleteAll, deleteOne, deleteSome} = require("../DB/Base");
 const {ObjectId} = require("mongodb");
 const jwt = require('jsonwebtoken');
-const dataBaseName = "ZobaStore";
+const dataBaseName = "E-commerce";
 const collectionName = "orders";
 const collection2Name = "users";
 

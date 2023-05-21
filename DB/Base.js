@@ -1,7 +1,6 @@
 const mongo = require('mongodb');
 const {ObjectId} = require("mongodb");
 const MongoClient = mongo.MongoClient;
-// let url = "mongodb://localhost:27017";
 let url = process.env.MONGO_URI
 
 //connect to mongo data base

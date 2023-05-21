@@ -1,6 +1,6 @@
 const {findAll, findOne, insertOne, updateOneByQuery} = require("../DB/Base");
 const jwt = require('jsonwebtoken');
-const dataBaseName = "ZobaStore";
+const dataBaseName = "E-commerce";
 const collectionName = "carts";
 
 class CartService {

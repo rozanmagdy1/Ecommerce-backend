@@ -5,7 +5,7 @@ const {ObjectId} = require("mongodb");
 const crypto = require("crypto");
 const nodemailer = require('nodemailer');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
-const dataBaseName = "ZobaStore";
+const dataBaseName = "E-commerce";
 const collectionName = "users";
 
 class UserService {

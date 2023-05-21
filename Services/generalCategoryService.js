@@ -1,6 +1,6 @@
 const {findAll, findOne, insertOne, updateOne, deleteOne, deleteAll} = require("../DB/Base");
 const {ObjectId} = require("mongodb");
-const dataBaseName = "ZobaStore";
+const dataBaseName = "E-commerce";
 const collectionName = "generalCategories";
 
 class GeneralCategoryService {
