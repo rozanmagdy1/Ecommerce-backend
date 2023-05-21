@@ -1,7 +1,4 @@
-// import service that will use inside controllers
 const {OrderService} = require("../Services/OrderService");
-const {findOne, deleteOne} = require("../DB/Base");
-const {ObjectId} = require("mongodb");
 const service = new OrderService();
 
 class OrdersControllers {

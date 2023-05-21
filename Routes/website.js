@@ -28,7 +28,7 @@ websiteApp.post('/changePassword',AC.changePassword);
 websiteApp.get('/user',UC.listUser);
 
 /*** orders ***/
-const {OrdersControllers} = require("../controllers/OrdersControllers");
+const {OrdersControllers} = require("../controllers/ordersControllers");
 let OC = new OrdersControllers();
 
 websiteApp.post('/orders', OC.createOrder);

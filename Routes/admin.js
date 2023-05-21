@@ -42,7 +42,7 @@ adminApp.put('/users/:id', UC.updateUser);
 adminApp.put('/status/users/:id', UC.changeUserStatues);
 
 /*** orders ***/
-const {OrdersControllers} = require("../controllers/OrdersControllers");
+const {OrdersControllers} = require("../controllers/ordersControllers");
 let OC = new OrdersControllers();
 
 adminApp.get('/orders',OC.listOrders);
