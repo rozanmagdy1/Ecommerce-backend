@@ -1,4 +1,4 @@
-const {OrderService} = require("../Services/OrderService");
+const {OrderService} = require("../Services/orderService");
 const service = new OrderService();
 
 class OrdersControllers {
