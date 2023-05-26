@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const {ObjectId} = require("mongodb");
 const crypto = require("crypto");
 const nodemailer = require('nodemailer');
-const sendGridTransport = require('nodemailer-sendgrid-transport');
+const Transport = require("nodemailer-sendinblue-transport");
 const dataBaseName = "E-commerce";
 const collectionName = "users";
 
@@ -112,13 +112,10 @@ class UserService {
         return decoded.username;
     }
 
-    key = process.env.SENDGRID_SECRET_KEY;
-    transporter = nodemailer.createTransport(sendGridTransport({
-        service: 'gmail',
-        auth: {
-            api_key: this.key
-        }
-    }));
+    k = process.env.EMAIL_SECRET_KEY;
+    transporter = nodemailer.createTransport(
+        new Transport({ apiKey: this.k })
+    );
 
     async forgotPassword(req, email) {
         let resetLink
@@ -130,13 +127,13 @@ class UserService {
             let token = jwt.sign({code}, 'resettoken', {expiresIn: '60m'});
 
             if (user.isAdmin === true) {
-                resetLink = `http://${req.headers.host}/admin/resetPassword/${token}`;
+                resetLink = `http://${req.headers.host}/admin/resetPassword`;
             } else {
-                resetLink = `http://${req.headers.host}/website/resetPassword/${token}`;
+                resetLink = `http://${req.headers.host}/website/resetPassword`;
             }
 
             const mailOptions = {
-                from: '0xalameda@gmail.com',
+                from: 'rozanmagdy1@gmail.com',
                 to: email,
                 subject: 'Reset your password',
                 html: `
@@ -151,6 +148,7 @@ class UserService {
                 await this.transporter.sendMail(mailOptions);
                 return {
                     message: 'Email sent',
+                    token: token,
                     resetLink: resetLink
                 };
             } catch (error) {

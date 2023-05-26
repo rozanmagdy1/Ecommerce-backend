@@ -6,7 +6,8 @@ const collectionName = "users";
 async function WebsiteMiddleWare(req, res, next) {
 
     if(req.path == '/login' || req.path == '/register'|| req.path == '/products' || req.path == '/sale/products'||
-        req.path == '/available/products' ||  req.path == '/generalCategories' || req.path == '/categories'){
+        req.path == '/available/products' ||  req.path == '/generalCategories' || req.path == '/categories'
+        || req.path == '/forgotPassword'|| req.path == '/resetPassword'){
         next();
     }else {
         try {

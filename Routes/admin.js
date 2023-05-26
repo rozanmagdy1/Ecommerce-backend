@@ -29,7 +29,7 @@ let UC = new userControllers();
 adminApp.post('/login', AC.login);
 adminApp.post('/register', AC.register);
 adminApp.post('/forgotPassword', AC.forgotPassword);
-adminApp.post('/resetPassword/:token', AC.resetPassword);
+adminApp.post('/resetPassword', AC.resetPassword);
 adminApp.post('/changePassword',AC.changePassword);
 adminApp.post('/register', AC.register);
 adminApp.post('/register', AC.register);

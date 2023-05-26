@@ -46,9 +46,9 @@ class authControllers {
     }
 
     async resetPassword(req,res) {
-        let resetToken = req.params.token;
+        let reset_token = req.headers["authorization"];
         let {username, newPassword} = req.body;
-        let result = await service.resetPassword(resetToken,username,newPassword);
+        let result = await service.resetPassword(reset_token,username,newPassword);
         if (result === null){
             res.json({
                 "message": "Time out , the link is expired"
