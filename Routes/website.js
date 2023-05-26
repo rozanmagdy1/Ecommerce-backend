@@ -23,7 +23,7 @@ let UC = new userControllers();
 websiteApp.post('/login', AC.login);
 websiteApp.post('/register', AC.register);
 websiteApp.post('/forgotPassword', AC.forgotPassword);
-websiteApp.post('/resetPassword/:token', AC.resetPassword);
+websiteApp.post('/resetPassword', AC.resetPassword);
 websiteApp.post('/changePassword',AC.changePassword);
 websiteApp.get('/user',UC.listUser);
 
