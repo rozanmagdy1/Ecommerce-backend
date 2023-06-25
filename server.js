@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 const port = process.env.PORT || 8080;
 
-
 const {adminApp} = require('./Routes/admin');
 const {websiteApp} = require('./Routes/website');
 
